@@ -26,26 +26,6 @@ if($_POST["hdnCmd"] == "Add")
  //exit();
 }
 
-//*** Update Condition ***//
-if($_POST["hdnCmd"] == "Update")
-{
- $strSQL = "UPDATE customer SET ";
- $strSQL .="CustomerID = '".$_POST["txtEditCustomerID"]."' ";
- $strSQL .=",Name = '".$_POST["txtEditName"]."' ";
- $strSQL .=",Email = '".$_POST["txtEditEmail"]."' ";
- $strSQL .=",CountryCode = '".$_POST["txtEditCountryCode"]."' ";
- $strSQL .=",Budget = '".$_POST["txtEditBudget"]."' ";
- $strSQL .=",Used = '".$_POST["txtEditUsed"]."' ";
- $strSQL .="WHERE CustomerID = '".$_POST["hdnEditCustomerID"]."' ";
- $objQuery = mysql_query($strSQL);
- if(!$objQuery)
- {
-  echo "Error Update [".mysql_error()."]";
- }
- //header("location:$_SERVER[PHP_SELF]");
- //exit();
-}
-
 //*** Delete Condition ***//
 if($_GET["Action"] == "Del")
 {
